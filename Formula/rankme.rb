@@ -35,7 +35,15 @@ class Rankme < Formula
     # ~/.local/bin, and a second one earlier on PATH from a different release is
     # how two copies end up disagreeing about what `builder status` says.
     # Only `rankme` is exposed.
-    libexec.install Dir["builder-*"].first => "builder"
+    # Whatever single file was staged, rather than a name.
+    #
+    # Homebrew names the staged file from the URL's basename, but it names the
+    # CACHED copy rankme--<version>, and the two are not the same code path.
+    # Guessing wrong makes Dir[] empty and install fails on nil -- after the
+    # download, in front of the user. The staging directory holds exactly one
+    # file for an uncompressed download, so take that one and stop asserting
+    # what it is called.
+    libexec.install Dir["*"].find { |f| File.file?(f) } => "builder"
 
     # --api is PREPENDED, so a deliberate --api later on the command line still
     # wins: the parser keeps the last value for an option. It is passed at all
@@ -58,6 +66,12 @@ class Rankme < Formula
       rankme asks before it publishes anything, and that question is read from a
       real terminal. Run it from a shell - not from CI, and not from a coding
       agent's shell tool, which has no controlling terminal and will be refused.
+
+      This formula ships a prebuilt binary and compiles nothing, but Homebrew
+      has no bottle for it and so treats installing it as a source build, which
+      requires current Command Line Tools. If the install refused with "Your
+      Command Line Tools are too outdated", update them - or skip Homebrew
+      entirely and use the one-line installer, which needs none of this.
     TEXT
   end
 
