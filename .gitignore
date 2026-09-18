@@ -1,0 +1,10 @@
+# Deny everything, then allow exactly the formula.
+#
+# A tap is a place people point `brew` at. Nothing but formulae belongs here,
+# and an allowlist is what makes that true rather than intended.
+*
+!.gitignore
+!README.md
+!LICENSE
+!Formula/
+!Formula/*.rb
