@@ -5,28 +5,28 @@
 class Rankme < Formula
   desc "Rank yourself as a coder, from the AI coding sessions already on this machine"
   homepage "https://poachdev.com"
-  version "0.1.7"
+  version "0.1.9"
   license :cannot_represent
 
   on_macos do
     on_arm do
-      url "https://github.com/jatinjain25/paxel-dist/releases/download/v0.1.7/rankme-darwin-arm64"
-      sha256 "4df93e60a836ea237e2b38efe22198a2115d524689d317a25c0ce4c2a1905764"
+      url "https://github.com/jatinjain25/paxel-dist/releases/download/v0.1.9/rankme-darwin-arm64"
+      sha256 "234f006594329aa21ab24f59988b13a1ecb9e268b5aa42f09d985841fda76245"
     end
     on_intel do
-      url "https://github.com/jatinjain25/paxel-dist/releases/download/v0.1.7/rankme-darwin-x64"
-      sha256 "06ec31882cb99239661d02e388e7e4ced697735bd3dbc8bb41c979f8eb420680"
+      url "https://github.com/jatinjain25/paxel-dist/releases/download/v0.1.9/rankme-darwin-x64"
+      sha256 "488c2ba95ff43060bda62bbcba60cf62ce3b2108c0356bbb019d69e130725da3"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/jatinjain25/paxel-dist/releases/download/v0.1.7/rankme-linux-arm64"
-      sha256 "af5825e22ae6978ea68e47428f08e67e701f36ed38e6ec143af966abe3a9c671"
+      url "https://github.com/jatinjain25/paxel-dist/releases/download/v0.1.9/rankme-linux-arm64"
+      sha256 "0e84176a6a11053f0086fcdb5e8cbac6bb4829fbb23a532b6b1745d0502472a1"
     end
     on_intel do
-      url "https://github.com/jatinjain25/paxel-dist/releases/download/v0.1.7/rankme-linux-x64"
-      sha256 "a7a2ac57b2dde4e62344ffd50650dde561b6fef62e7835692ec1ca45bd04e62f"
+      url "https://github.com/jatinjain25/paxel-dist/releases/download/v0.1.9/rankme-linux-x64"
+      sha256 "bbc73cdb5aeea266b230908a6594c80808e931b8a5850fbad6f7c33926640776"
     end
   end
 
